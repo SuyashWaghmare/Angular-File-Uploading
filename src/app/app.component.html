@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>{{ title }}</h1>
+
+  <form (ngSubmit)="uploadDocument()" #uploadForm="ngForm">
+    <div class="form-group">
+      <label for="adharCard">Aadhar Card</label>
+      <input type="file" class="form-control" id="adharCard" name="adharCard" (change)="onSelectAdharCard($event)" accept="image/*" required>
+    </div>
+
+    <div class="form-group">
+      <label for="panCard">PAN Card</label>
+      <input type="file" class="form-control" id="panCard" name="panCard" (change)="onSelectPanCard($event)" accept="image/*" required>
+    </div>
+
+    <div class="form-group">
+      <label for="license">License</label>
+      <input type="file" class="form-control" id="license" name="license" (change)="onSelectLicense($event)" accept="image/*" required>
+    </div>
+
+    <div class="form-group">
+      <label for="photo">Photo</label>
+      <input type="file" class="form-control" id="photo" name="photo" (change)="onSelectPhoto($event)" accept="image/*" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="!uploadForm.valid">Upload</button>
+  </form>
+</div>
